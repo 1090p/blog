@@ -178,7 +178,7 @@ Available Posts:</pre>
         <div class="blog-section">
             <div class="blog-post">
                 <a href="blog-1.html">
-                    <div class="post-title">[01] The Software We Make</div>
+                    <div class="post-title">[03] The Software We Make</div>
                     <div class="post-date">Dec 17 , 2024</div>
                     <div class="post-excerpt">A little about the software we make...</div>
                     <div class="enter-text">[ENTER] to read →</div>
@@ -196,7 +196,7 @@ Available Posts:</pre>
 
             <div class="blog-post">
                 <a href="#">
-                    <div class="post-title">[03] Ideas don't build themselves</div>
+                    <div class="post-title">[01] Ideas don't build themselves</div>
                     <div class="post-date">July 16 , 2024</div>
                     <div class="post-excerpt">What we stand for.</div>
                     <div class="enter-text">[ENTER] to read →</div>
@@ -233,14 +233,12 @@ System uptime: [CONNECTED]
         function scrollToPost(index) {
             const selectedPost = posts[index];
             if (selectedPost) {
-                // If it's the first post, scroll to the very top to show the header
                 if (index === 0) {
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'
                     });
                 } else {
-                    // For other posts, center them in the viewport
                     selectedPost.scrollIntoView({
                         behavior: 'smooth',
                         block: 'center'
@@ -249,10 +247,8 @@ System uptime: [CONNECTED]
             }
         }
 
-        // Initialize with first post highlighted (no auto-scroll on load)
         highlightPost(0);
 
-        // Add keyboard navigation
         document.addEventListener('keydown', function(e) {
             switch(e.key) {
                 case 'ArrowUp':
@@ -269,7 +265,6 @@ System uptime: [CONNECTED]
                     break;
                 case 'Enter':
                     e.preventDefault();
-                    // Navigate to the selected post
                     const selectedPost = posts[currentSelection];
                     const link = selectedPost.querySelector('a');
                     if (link.href && link.href !== '#') {
